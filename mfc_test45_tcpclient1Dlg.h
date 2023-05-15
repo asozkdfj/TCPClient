@@ -1,0 +1,45 @@
+﻿
+// mfc_test45_tcpclient1Dlg.h: 헤더 파일
+//
+class CDataSocket;
+
+#pragma once
+
+
+// Cmfctest45tcpclient1Dlg 대화 상자
+class Cmfctest45tcpclient1Dlg : public CDialogEx
+{
+// 생성입니다.
+public:
+	Cmfctest45tcpclient1Dlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
+
+	CDataSocket* m_pDataSocket;
+
+// 대화 상자 데이터입니다.
+#ifdef AFX_DESIGN_TIME
+	enum { IDD = IDD_MFC_TEST45_TCPCLIENT1_DIALOG };
+#endif
+
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
+
+
+// 구현입니다.
+protected:
+	HICON m_hIcon;
+
+	// 생성된 메시지 맵 함수
+	virtual BOOL OnInitDialog();
+	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
+	afx_msg void OnPaint();
+	afx_msg HCURSOR OnQueryDragIcon();
+	DECLARE_MESSAGE_MAP()
+
+public:
+	
+	afx_msg void OnBnClickedDisconnect();
+	afx_msg void OnBnClickedSend();
+	CEdit m_edit;
+	CIPAddressCtrl m_ipaddr;
+	afx_msg void OnBnClickedConnect();
+};
